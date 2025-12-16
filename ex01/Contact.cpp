@@ -12,32 +12,32 @@
 
 #include "Contact.hpp"
 
-std::string Contact::get_first_name()
+std::string Contact::getFirstName() const
 {
     return (this->_first_name);
 }
 
-std::string Contact::get_last_name()
+std::string Contact::getLastName() const
 {
     return (this->_last_name);
 }
 
-std::string Contact::get_nickname()
+std::string Contact::getNickname() const
 {
     return (this->_nickname);
 }
 
-std::string Contact::get_phone_number()
+std::string Contact::getPhoneNumber() const
 {
     return (this->_phone_number);
 }
 
-std::string Contact::get_secret()
+std::string Contact::getSecret() const
 {
     return (this->_secret);
 }
 
-int Contact::set_first_name(std::string first_name)
+int Contact::setFirstName(std::string first_name)
 {   
     if (first_name == "")
         return (1);
@@ -56,7 +56,7 @@ int Contact::set_first_name(std::string first_name)
     return (0);
 }
 
-int Contact::set_last_name(std::string last_name)
+int Contact::setLastName(std::string last_name)
 {
     if (last_name == "")
         return (1);
@@ -74,7 +74,7 @@ int Contact::set_last_name(std::string last_name)
     return (0);
 }
 
-int Contact::set_nickname(std::string nickname)
+int Contact::setNickname(std::string nickname)
 {
     if (nickname == "")
         return (1);
@@ -92,7 +92,7 @@ int Contact::set_nickname(std::string nickname)
     return (0);
 }
 
-int Contact::set_phone_number(std::string phone_number)
+int Contact::setPhoneNumber(std::string phone_number)
 {
     if (phone_number.size() > 15 || phone_number == "")
         return (1);
@@ -105,7 +105,7 @@ int Contact::set_phone_number(std::string phone_number)
     return (0);
 }
 
-int Contact::set_secret(std::string secret)
+int Contact::setSecret(std::string secret)
 {
     if (secret == "")
         return (1);

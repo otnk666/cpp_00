@@ -16,8 +16,8 @@ class   PhoneBook
     public:
         PhoneBook() : _index(0), _count(0){}
 
-        void	display_phonebook(void);
-        void    search_contact(void);
-        void    add_contact(void);
+        void	displayPhonebook(void);
+        void    searchContact(void);
+        void    addContact(void);
 
 };

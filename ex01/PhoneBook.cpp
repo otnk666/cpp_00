@@ -6,13 +6,13 @@
 /*   By: skomatsu <skomatsu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/20 19:47:22 by skomatsu          #+#    #+#             */
-/*   Updated: 2025/09/23 04:51:23 by skomatsu         ###   ########.fr       */
+/*   Updated: 2025/12/15 22:35:09 by skomatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-std::string trim_for_display(std::string elem)
+std::string trimForDisplay(std::string elem)
 {
     if (elem.size() > 10)
     {
@@ -22,7 +22,7 @@ std::string trim_for_display(std::string elem)
     return (elem);
 }
 
-void PhoneBook::add_contact() 
+void PhoneBook::addContact() 
 {
     Contact new_contact;
     std::string input;
@@ -30,44 +30,49 @@ void PhoneBook::add_contact()
     // First Name
     while (1) {
         std::cout << "First Name: ";
-        std::getline(std::cin, input);
-        if (!input.empty() && new_contact.set_first_name(input) == 0)
+        if (!std::getline(std::cin, input))
+            return;
+        if (!input.empty() && new_contact.setFirstName(input) == 0)
             break;
         std::cout << "INVALID INPUT" << std::endl;
     }
-    
+
     // Last Name
     while (1) {
         std::cout << "Last Name: ";
-        std::getline(std::cin, input);
-        if (!input.empty() && new_contact.set_last_name(input) == 0)
+        if (!std::getline(std::cin, input))
+            return;
+        if (!input.empty() && new_contact.setLastName(input) == 0)
             break;
         std::cout << "INVALID INPUT" << std::endl;
     }
-    
+
     // Nickname
     while (1) {
         std::cout << "Nickname: ";
-        std::getline(std::cin, input);
-        if (!input.empty() && new_contact.set_nickname(input) == 0)
+        if (!std::getline(std::cin, input))
+            return;
+        if (!input.empty() && new_contact.setNickname(input) == 0)
             break;
         std::cout << "INVALID INPUT" << std::endl;
     }
-    
+
     // Phone Number
     while (1) {
         std::cout << "Phone Number: ";
-        std::getline(std::cin, input);
-        if (!input.empty() && new_contact.set_phone_number(input) == 0)
+        if (!std::getline(std::cin, input))
+            return;
+        if (!input.empty() && new_contact.setPhoneNumber(input) == 0)
             break;
         std::cout << "INVALID INPUT" << std::endl;
     }
-    
+
     // Darkest Secret
     while (1) {
         std::cout << "Darkest Secret: ";
-        std::getline(std::cin, input);
-        if (!input.empty() && new_contact.set_secret(input) == 0)
+        if (!std::getline(std::cin, input))
+            return;
+        if (!input.empty() && new_contact.setSecret(input) == 0)
             break;
         std::cout << "INVALID INPUT" << std::endl;
     }
@@ -79,7 +84,7 @@ void PhoneBook::add_contact()
     std::cout << "Registration complete!" << std::endl;
 }
 
-void PhoneBook::search_contact()
+void PhoneBook::searchContact()
 {
     std::string input;
     int index;
@@ -89,10 +94,11 @@ void PhoneBook::search_contact()
         return;
     }
     
-    display_phonebook();
-    
+    displayPhonebook();
+
     std::cout << "Enter index for searching" << std::endl;
-    std::getline(std::cin, input);
+    if(!std::getline(std::cin, input))
+        return;
     if (input.length() != 1 || !std::isdigit(input[0])) 
     {
         std::cout << "Invalid input" << std::endl;
@@ -105,21 +111,21 @@ void PhoneBook::search_contact()
         return;
     }
     
-    std::cout << "First Name :" <<  _contact[index].get_first_name() << std::endl;
-    std::cout << "Last Name :" << _contact[index].get_last_name() << std::endl;
-    std::cout << "Nickname :" << _contact[index].get_nickname() << std::endl; 
-    std::cout << "Phone Number :" << _contact[index].get_phone_number() << std::endl;
-    std::cout << "Secret :" << _contact[index].get_secret() << std::endl;
+    std::cout << "First Name :" <<  _contact[index].getFirstName() << std::endl;
+    std::cout << "Last Name :" << _contact[index].getLastName() << std::endl;
+    std::cout << "Nickname :" << _contact[index].getNickname() << std::endl; 
+    std::cout << "Phone Number :" << _contact[index].getPhoneNumber() << std::endl;
+    std::cout << "Secret :" << _contact[index].getSecret() << std::endl;
 }
 
-void PhoneBook::display_phonebook()
+void PhoneBook::displayPhonebook()
 {
     std::cout << "|     Index|First Name| Last Name|  Nickname|\n";
-    for (size_t i = 0; i < 8; i++)
+    for (int i = 0; i < _count; i++)
     {
         std::cout << "|" << std::setw(10) << i ;
-        std::cout << "|" << std::setw(10) << trim_for_display(_contact[i].get_first_name());
-        std::cout << "|" << std::setw(10) << trim_for_display(_contact[i].get_last_name());
-        std::cout << "|" << std::setw(10) << trim_for_display(_contact[i].get_nickname()) << "|"<< std::endl;
+        std::cout << "|" << std::setw(10) << trimForDisplay(_contact[i].getFirstName());
+        std::cout << "|" << std::setw(10) << trimForDisplay(_contact[i].getLastName());
+        std::cout << "|" << std::setw(10) << trimForDisplay(_contact[i].getNickname()) << "|"<< std::endl;
     }
 }

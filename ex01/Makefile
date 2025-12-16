@@ -2,8 +2,8 @@
 NAME		= PhoneBook
 
 CXX			= c++
-CXXFLAGS 	= -Wall -Werror -Wextra -g
-CXXFLAGS	+= -std=c++98
+CXXFLAGS 	= -Wall -Werror -Wextra
+CXXFLAGS	+= -std=c++98 -pedantic
 
 RM			= rm -rf
 SRCS		= main.cpp PhoneBook.cpp Contact.cpp

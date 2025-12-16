@@ -6,22 +6,12 @@
 /*   By: skomatsu <skomatsu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 15:51:56 by skomatsu          #+#    #+#             */
-/*   Updated: 2025/09/23 04:18:50 by skomatsu         ###   ########.fr       */
+/*   Updated: 2025/12/15 22:35:01 by skomatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
-
-void    command_add(PhoneBook& phonebook)
-{
-    phonebook.add_contact();
-}
-
-void    command_search(PhoneBook& phonebook)
-{
-    phonebook.search_contact();
-}
 
 int main(void)
 {
@@ -32,11 +22,12 @@ int main(void)
     while (1)
     {
         std::cout << "PhoneBook >";
-        std::getline(std::cin, content);
+        if (!std::getline(std::cin, content))
+            break;
         if (content == "ADD")
-            command_add(phonebook);
+            phonebook.addContact();
         else if (content == "SEARCH")
-            command_search(phonebook);
+            phonebook.searchContact();
         else if (content == "EXIT")
         {
             std::cout << "EXIT" << std::endl;
