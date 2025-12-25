@@ -6,7 +6,7 @@
 /*   By: skomatsu <skomatsu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/20 19:47:22 by skomatsu          #+#    #+#             */
-/*   Updated: 2025/12/15 22:35:09 by skomatsu         ###   ########.fr       */
+/*   Updated: 2025/12/25 22:12:30 by skomatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void PhoneBook::addContact()
             return;
         if (!input.empty() && new_contact.setFirstName(input) == 0)
             break;
-        std::cout << "INVALID INPUT" << std::endl;
+        std::cout << "INVALID INPUT : First Name" << std::endl;
     }
 
     // Last Name
@@ -44,7 +44,7 @@ void PhoneBook::addContact()
             return;
         if (!input.empty() && new_contact.setLastName(input) == 0)
             break;
-        std::cout << "INVALID INPUT" << std::endl;
+        std::cout << "INVALID INPUT : Last Name" << std::endl;
     }
 
     // Nickname
@@ -54,7 +54,7 @@ void PhoneBook::addContact()
             return;
         if (!input.empty() && new_contact.setNickname(input) == 0)
             break;
-        std::cout << "INVALID INPUT" << std::endl;
+        std::cout << "INVALID INPUT : Nickname" << std::endl;
     }
 
     // Phone Number
@@ -64,7 +64,7 @@ void PhoneBook::addContact()
             return;
         if (!input.empty() && new_contact.setPhoneNumber(input) == 0)
             break;
-        std::cout << "INVALID INPUT" << std::endl;
+        std::cout << "INVALID INPUT : Phone Number" << std::endl;
     }
 
     // Darkest Secret
@@ -74,7 +74,7 @@ void PhoneBook::addContact()
             return;
         if (!input.empty() && new_contact.setSecret(input) == 0)
             break;
-        std::cout << "INVALID INPUT" << std::endl;
+        std::cout << "INVALID INPUT : Darkest Secret" << std::endl;
     }
     
     _contact[_index] = new_contact;

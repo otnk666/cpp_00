@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Megaphone.cpp                                      :+:      :+:    :+:   */
+/*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: skomatsu <skomatsu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/18 19:37:24 by skomatsu          #+#    #+#             */
-/*   Updated: 2025/12/15 19:43:12 by skomatsu         ###   ########.fr       */
+/*   Updated: 2025/12/25 22:05:01 by skomatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ int main (int argc, char **argv)
         {
             std::string str(argv[i]);
             for (size_t j = 0; j < str.length(); j++)
-                std::cout << (char)std::toupper(str[j]);
+                std::cout << static_cast<char>(
+                    std::toupper(static_cast<unsigned char>(str[j])));
         }
         std::cout << std::endl;
     }

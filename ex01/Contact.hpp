@@ -1,4 +1,5 @@
-#pragma once
+#ifndef CONTACT_HPP
+#define CONTACT_HPP
 
 #include <iostream>
 #include <cctype>
@@ -15,6 +16,7 @@ class   Contact
 
     public:
         Contact() {}
+        ~Contact() {}
 
         std::string getFirstName() const;
         std::string getLastName() const;
@@ -22,9 +24,11 @@ class   Contact
         std::string getPhoneNumber() const;
         std::string getSecret() const;
 
-        int     setFirstName(std::string first_name);
-        int     setLastName(std::string last_name);
-        int     setNickname(std::string nickname);
-        int     setPhoneNumber(std::string phone_number);
-        int     setSecret(std::string secret);
+        int     setFirstName(const std::string& first_name);
+        int     setLastName(const std::string& last_name);
+        int     setNickname(const std::string& nickname);
+        int     setPhoneNumber(const std::string& phone_number);
+        int     setSecret(const std::string& secret);
 };
+
+#endif

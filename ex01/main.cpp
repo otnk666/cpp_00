@@ -6,12 +6,11 @@
 /*   By: skomatsu <skomatsu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 15:51:56 by skomatsu          #+#    #+#             */
-/*   Updated: 2025/12/15 22:35:01 by skomatsu         ###   ########.fr       */
+/*   Updated: 2025/12/25 20:19:32 by skomatsu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
-#include "Contact.hpp"
 
 int main(void)
 {

@@ -1,4 +1,5 @@
-#pragma once
+#ifndef PHONEBOOK_HPP
+#define PHONEBOOK_HPP
 
 #include <iostream>
 #include <cctype>
@@ -21,3 +22,5 @@ class   PhoneBook
         void    addContact(void);
 
 };
+
+#endif
